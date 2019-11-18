@@ -1,0 +1,47 @@
+﻿// open nopcommerce home page
+Connect serverID:"192.168.1.98", portNum:5900, password:"eggplant", type:"VNC"
+Show remote
+TypeText windowsKey,r
+TypeText "Chrome http://nopcommerce.testplant.com/ -incognito", return
+TypeText windowsKey,upArrow
+WaitFor 140, "SEARCHButton"
+wait 3
+//search Camera product
+Click imageName:"Searchstore", waitFor:10
+TypeText "camera", return
+wait 2
+Repeat until ImageFound(imageName:"cameraImage", waitFor:5)
+	typetext pageDown
+	If repeatIndex() is 3 then
+		Exit repeat		
+	End If	
+End repeat
+
+Repeat until ImageFound(imageName:"ADDTOCARTButtonPage1", waitFor:5)
+	typetext downArrow
+	If repeatIndex() is 7 then
+		Exit repeat		
+	End If
+End repeat
+wait 1
+Click "ADDTOCARTButtonPage1"
+wait 3
+Repeat until ImageFound("ShoppingcartText")
+	TypeText pageUp
+	if repeatIndex() is 8 then
+		LogError "image is not found "
+		Exit repeat
+		
+	end if
+End repeat
+Click imageName:"ShoppingcartText", waitFor:7
+wait 2
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+﻿
+BeginTestCase "SearchProductsInNopCommerce"
+RunWithNewResults TC_SearchProduct
+EndTestCase "SearchProductsInNopCommerce"
+
+
+BeginTestCase "AddToCart"
+RunWithNewResults TC_AddToCart
+EndTestCase "AddToCart"

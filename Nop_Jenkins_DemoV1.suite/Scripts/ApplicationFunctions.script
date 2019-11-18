@@ -1,0 +1,27 @@
+﻿
+//Description: if an image is displaying in lower part of screen and we need to Pagedown to find this , use below handler
+
+
+to handle PageDownToFoundImage with iPimagename, countTostoprepeat, PkeyAction
+	Repeat until ImageFound(imageName:iPimagename, waitFor:5)
+		typetext PkeyAction
+		If repeatIndex() is countTostoprepeat then
+			log"image not found"
+			Exit repeat		
+		End If	
+	End repeat
+end PageDownToFoundImage
+
+//Description: if an image is displaying in upper part of screen and you are in buttom part then we need to PageUP to find this , use below handler
+
+to handle pageUpToFoundImage with iPimagename, countTostoprepeat, PkeyAction
+	Repeat until ImageFound(iPimagename)
+		TypeText PkeyAction
+		if repeatIndex() is countTostoprepeat then
+			Log "image is not found "
+			Exit repeat
+			
+		end if
+	End repeat
+end pageUpToFoundImage
+

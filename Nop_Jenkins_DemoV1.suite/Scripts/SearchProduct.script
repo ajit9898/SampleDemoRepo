@@ -1,0 +1,33 @@
+﻿// open nopcommerce home page
+Connect serverID:"192.168.1.98", portNum:5900, password:"eggplant", type:"VNC"
+
+Show remote
+
+TypeText windowsKey,r
+TypeText "Chrome http://nopcommerce.testplant.com/ -incognito", return
+
+TypeText windowsKey,upArrow
+
+WaitFor 140, "SEARCHButton"
+wait 3
+//search Camera product
+Click imageName:"Searchstore", waitFor:10
+TypeText "camera", return
+
+wait 2
+Repeat until ImageFound(imageName:"cameraImage", waitFor:5)
+	typetext pageDown
+	If repeatIndex() is 3 then
+		Exit repeat		
+	End If
+	
+End repeat
+
+If ImageFound("cameraImage") then
+	Log "successfuly searched product"
+End if
+
+
+
+
+

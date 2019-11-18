@@ -1,0 +1,18 @@
+﻿
+//Add product to cart
+CommonFunctions.connectWithRdp "192.168.1.106","Ideabytes@123"
+CommonFunctions.OpenWebAppFromWindows "Chrome","http://nopcommerce.testplant.com/"
+CommonFunctions.VerifyImage "Searchstore"
+CommonFunctions.EnterTextWithImage"Searchstore","Camera"
+CommonFunctions.clickElementWithImage "SEARCHButton"
+//CommonFunctions.clickElementWithImage "clickmiddle"
+ApplicationFunctions.PageDownToFoundImage "cameraImage","4",pageDown
+CommonFunctions.VerifyImage "cameraImage"
+ApplicationFunctions.PageDownToFoundImage "ADDTOCARTButtonPage1","7",downArrow
+CommonFunctions.clickElementWithImage "ADDTOCARTButtonPage1"
+ApplicationFunctions.pageUpToFoundImage "ShoppingcartText","9",pageUp
+
+CommonFunctions.clickElementWithImage "ShoppingcartText"
+closeBrowser
+
+

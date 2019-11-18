@@ -1,0 +1,126 @@
+﻿//Name :Ajit
+//Description:clickging to any element with parameter as imagename(web app, windows app)
+
+to handle clickElementWithImage Pimagename
+	//waitfor 10, image: Pimagename
+	click image: Pimagename, waitfor:10
+end clickElementWithImage
+
+//Name :Ajit
+//Description:clickging to any element with parameter as Text(web app, windows app)
+
+to handle clickElementWithText Ptext
+
+	waitfor 10, text:Ptext
+	click foundimagelocation()
+end clickElementWithText
+
+//Name :Ajit
+//Description:clickging to any element if that element appears many places in a page(web app, windows app)
+to handle clickImageWithItemNum itemnumber, Pimagename
+
+	waitfor 10,  image:Pimagename
+	Put EveryImageLocation(Pimagename) into imageLocationList
+	click item itemnumber of imageLocationList
+	
+end clickImageWithItemNum
+
+
+//Name:Ajit
+//Description:Enter data to a text box using image of element(web app, windows app)
+
+to handle EnterTextWithImage PimageName,Pdata
+	click image:PimageName, waitFor:120
+	TypeText controlKey,a
+	TypeText deleteKey
+	TypeText Pdata
+end EnterTextWithImage 
+
+//Name:Ajit
+//Description:Enter data to a text box using Text of element(web app, windows app)
+
+to handle EnterTextWithText PText,Pdata
+	click text:PText, waitFor:120
+	TypeText controlKey,a
+	TypeText deleteKey
+	TypeText Pdata
+end EnterTextWithText
+
+(*//Name:Ajit
+//Description:Connect to SUT(windows, mac,linux) using RDP connection*)
+
+to handle connectWithRdp with PSUTIP, PSUTpassword
+	Connect serverID:PSUTIP, portNum:3389, password:PSUTpassword, type:"RDP"
+	show Remote
+end connectWithRdp
+
+//Name:Ajit
+//Description:Connect to SUT(windows, mac,linux) using VNC connection
+to handle connectWithVNC with PSUTIP, PVNCServerpassword
+	Connect serverID:PSUTIP, portNum:5900, password:PVNCServerpassword, type:"VNC"
+	Show Remote
+end connectWithVNC
+
+
+(*//Name: Ajit
+Description: Open web app in browser (Chrome, iexplore, Firefox) from windows machine *) 
+
+to handle OpenWebAppFromWindows with Pbrowsername, purl
+	put purl into url
+	typetext windowsKey,r
+	
+	typetext Pbrowsername&" "&url&" -incognito"
+	TypeText return
+	typetext windowsKey,upArrow
+end OpenWebAppFromWindows
+
+(*//Name: Ajit
+Description: Verify a image in a page or verify page*)
+
+to handle VerifyImage with Pimagename
+	If ImageFound(imageName:Pimagename, waitFor:120) then
+		Log "image found in the page"
+		else
+		Log "image not  found in the page"
+	End if
+end VerifyImage
+
+//Name:Ajit
+//Description: if an image is displaying in lower part of screen and we need to Pagedown to find this , use below handler
+
+
+to handle PageDownToFoundImage with iPimagename, countTostoprepeat, PkeyAction
+	Repeat until ImageFound(imageName:iPimagename, waitFor:5)
+		typetext PkeyAction
+		If repeatIndex() is countTostoprepeat then
+			log"image not found"
+			Exit repeat		
+		End If	
+	End repeat
+end PageDownToFoundImage
+
+//Name:Ajit
+//Description: if an image is displaying in upper part of screen and you are in buttom part then we need to PageUP to find this , use below handler
+
+to handle pageUpToFoundImage with iPimagename, countTostoprepeat, PkeyAction
+	Repeat until ImageFound(iPimagename)
+		TypeText PkeyAction
+		if repeatIndex() is countTostoprepeat then
+			Log "image is not found "
+			Exit repeat
+			
+		end if
+	End repeat
+end pageUpToFoundImage
+
+
+
+
+
+
+
+
+
+
+
+

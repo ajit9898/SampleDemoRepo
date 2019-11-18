@@ -1,0 +1,9 @@
+﻿
+BeginTestCase "SearchProductsInNopCommerce"
+RunWithNewResults SearchProduct_Functions
+EndTestCase "SearchProductsInNopCommerce"
+
+
+BeginTestCase "AddToCart"
+RunWithNewResults AddProduct_Functions
+EndTestCase "AddToCart"
