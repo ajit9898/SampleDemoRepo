@@ -1,4 +1,4 @@
-﻿//nop commerece
+﻿//nop commerece Add to cart
 BeginTestCase "SearchProductsInNopCommerce"
 RunWithNewResults TC_SearchProduct
 EndTestCase "SearchProductsInNopCommerce"
