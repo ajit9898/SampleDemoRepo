@@ -1,6 +1,7 @@
 ﻿// open nopcommerce home page
 Connect serverID:"192.168.1.208", portNum:5900, password:"eggplant", type:"VNC"
 Show remote
+Log"SUT connected"
 TypeText windowsKey,r
 TypeText "Chrome http://nopcommerce.testplant.com/ -incognito", return
 TypeText windowsKey,upArrow
