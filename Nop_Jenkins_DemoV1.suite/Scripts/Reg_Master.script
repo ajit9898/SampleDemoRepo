@@ -5,6 +5,7 @@ EndTestCase "SearchProductsInNopCommerce"
 log"complete 1st test case"
 Log"execute 7th"
 Log"execute 7th"
+Log"execute 7th"
 BeginTestCase "AddToCart"
 RunWithNewResults TC_AddToCart
 EndTestCase "AddToCart"
