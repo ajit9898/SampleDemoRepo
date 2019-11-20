@@ -2,7 +2,7 @@
 BeginTestCase "SearchProductsInNopCommerce"
 RunWithNewResults TC_SearchProduct
 EndTestCase "SearchProductsInNopCommerce"
-
+log"complete 1st test case"
 
 BeginTestCase "AddToCart"
 RunWithNewResults TC_AddToCart
