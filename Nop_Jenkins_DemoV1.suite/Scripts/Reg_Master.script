@@ -6,6 +6,7 @@ log"====complete 1st test case"
 log"====complete 2st test case"
 Log"webhook"
 Log"Poolscm"
+Log"Poolscm2"
 BeginTestCase "AddToCart"
 RunWithNewResults TC_AddToCart
 EndTestCase "AddToCart"
