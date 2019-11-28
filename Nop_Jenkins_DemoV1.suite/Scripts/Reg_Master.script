@@ -1,4 +1,5 @@
 ﻿//nop commerece Add to cart
+//Ajit created
 BeginTestCase "SearchProductsInNopCommerce"
 RunWithNewResults TC_SearchProduct
 EndTestCase "SearchProductsInNopCommerce"
