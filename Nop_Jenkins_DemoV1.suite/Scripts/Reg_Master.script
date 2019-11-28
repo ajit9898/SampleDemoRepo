@@ -8,6 +8,7 @@ log"====complete 2st test case"
 Log"webhook"
 Log"Poolscm"
 Log"Poolscm2"
+log "ajith"
 Log"Other users commit and jenkins built automatically in one minute"
 BeginTestCase "AddToCart"
 RunWithNewResults TC_AddToCart
